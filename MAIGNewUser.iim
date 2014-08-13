@@ -1,0 +1,18 @@
+VERSION BUILD=7020226 RECORDER=CR
+URL GOTO=http://van.maig.org/UserList.aspx?SideBarSelected=5
+SET !EXTRACT_TEST_POPUP NO
+SET !DATASOURCE C:\Users\Local<SP>User\Downloads\Momsvantraining523.csv
+SET !DATASOURCE_COLUMNS 15
+SET !LOOP 3
+SET !DATASOURCE_LINE {{!LOOP}}
+WAIT seconds = 5
+TAG POS=1 TYPE=INPUT:SUBMIT FORM=ID:aspnetForm ATTR=ID:ctl00_ContentPlaceHolderVANPage_ButtonAddNewUser
+TAG POS=1 TYPE=INPUT:TEXT FORM=ID:aspnetForm ATTR=ID:ctl00_ContentPlaceHolderVANPage_VANDetailsItemUserLastName_VANInputItemDetailsItemUserLastName_UserLastName CONTENT={{!Col3}}
+TAG POS=1 TYPE=INPUT:TEXT FORM=ID:aspnetForm ATTR=ID:ctl00_ContentPlaceHolderVANPage_VANDetailsItemUserLastName_VANInputItemDetailsItemUserLastName_UserLastName CONTENT={{!Col3}}
+TAG POS=1 TYPE=INPUT:TEXT FORM=ID:aspnetForm ATTR=ID:ctl00_ContentPlaceHolderVANPage_VANDetailsItemUserFirstName_VANInputItemDetailsItemUserFirstName_UserFirstName CONTENT={{!Col2}}
+TAG POS=1 TYPE=INPUT:TEXT FORM=ID:aspnetForm ATTR=ID:ctl00_ContentPlaceHolderVANPage_VANDetailsItemUserName_VANInputItemDetailsItemUserName_UserName CONTENT={{!Col5}}
+TAG POS=1 TYPE=SELECT FORM=ID:aspnetForm ATTR=ID:ctl00_ContentPlaceHolderVANPage_VANDetailsItemSecurityProfileMyCampaign_VANInputItemDetailsItemSecurityProfileMyCampaign_SecurityProfileMyCampaign CONTENT=%27160
+WAIT seconds = 5
+TAG POS=1 TYPE=INPUT:SUBMIT FORM=ID:aspnetForm ATTR=ID:ctl00_ContentPlaceHolderVANPage_ButtonuserSubmit
+WAIT seconds = 3
+TAG POS=1 TYPE=INPUT:SUBMIT FORM=ID:aspnetForm ATTR=ID:ctl00_ContentPlaceHolderVANPage_ButtonSkip
