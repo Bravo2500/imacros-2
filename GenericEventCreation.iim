@@ -1,0 +1,25 @@
+VERSION BUILD=8810214 RECORDER=FX
+TAB T=1
+SET !EXTRACT_TEST_POPUP NO
+SET !DATASOURCE C:\Users\Local<SP>User\Documents\eventcreationtemplate.csv
+SET !DATASOURCE_COLUMNS 15
+SET !LOOP 23
+SET !DATASOURCE_LINE {{!LOOP}}
+'Add event
+Wait seconds = 4
+TAG POS=1 TYPE=IMG ATTR=SRC:http://van.maig.org/images/events/calendar/event_add.png
+TAG POS=1 TYPE=SELECT FORM=ID:aspnetForm ATTR=ID:ctl00_ContentPlaceHolderVANPage_EventTypePopup_SelectEventTypesList_ddl_SelectEventTypesList CONTENT=%120062
+TAG POS=1 TYPE=INPUT:SUBMIT FORM=ID:aspnetForm ATTR=ID:ctl00_ContentPlaceHolderVANPage_EventTypePopup_ChooseEventType
+'Setup Event
+wait seconds = 4
+TAG POS=1 TYPE=INPUT:TEXT FORM=ID:aspnetForm ATTR=ID:ctl00_ContentPlaceHolderVANPage_VanDetailsItemName_VANInputItemDetailsItemName_Name CONTENT={{!Col1}}
+TAG POS=1 TYPE=INPUT:TEXT FORM=ID:aspnetForm ATTR=ID:ctl00_ContentPlaceHolderVANPage_VanDetailsItemShortName_VANInputItemDetailsItemShortName_ShortName CONTENT={{!Col2}}
+TAG POS=1 TYPE=INPUT:TEXT FORM=ID:aspnetForm ATTR=ID:ctl00_ContentPlaceHolderVANPage_VanDetailsItemVDIDateStart_DateStart_dateDateStart_tb_dateDateStart CONTENT={{!Col3}}
+TAG POS=1 TYPE=INPUT:TEXT FORM=ID:aspnetForm ATTR=ID:ctl00_ContentPlaceHolderVANPage_VanDetailsItemVDIDateStart_DateStart_timeDateStart_tc_timeDateStart_tc_timeDateStart_timeText_tb_tc_timeDateStart_timeText CONTENT={{!Col4}}
+TAG POS=1 TYPE=INPUT:TEXT FORM=ID:aspnetForm ATTR=ID:ctl00_ContentPlaceHolderVANPage_VanDetailsItemVDIDateEnd_DateEnd_dateDateEnd_tb_dateDateEnd CONTENT={{!Col3}}
+TAG POS=1 TYPE=INPUT:TEXT FORM=ID:aspnetForm ATTR=ID:ctl00_ContentPlaceHolderVANPage_VanDetailsItemVDIDateEnd_DateEnd_timeDateEnd_tc_timeDateEnd_tc_timeDateEnd_timeText_tb_tc_timeDateEnd_timeText CONTENT={{!Col5}}
+Wait Seconds = 3
+TAG POS=1 TYPE=INPUT:BUTTON FORM=ID:aspnetForm ATTR=ID:ctl00_ContentPlaceHolderVANPage_FinishName
+'Return
+Wait seconds = 3
+TAG POS=1 TYPE=A ATTR=TXT:Event<SP>Calendar
