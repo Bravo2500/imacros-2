@@ -1,0 +1,33 @@
+VERSION BUILD=7500718 RECORDER=FX
+TAB T=1
+URL GOTO=http://votebuilder.com/Default.aspx
+TAG POS=1 TYPE=A ATTR=ID:ctl00_ContentPlaceHolderVANPage_HyperLinkMenuCountsAndCrosstabs
+
+TAG POS=1 TYPE=SELECT FORM=ACTION:Demographics.aspx ATTR=ID:ctl00_ContentPlaceHolderVANPage_ddlColumn1 CONTENT=%CustomField_13Name
+TAG POS=1 TYPE=SELECT FORM=ACTION:Demographics.aspx ATTR=ID:ctl00_ContentPlaceHolderVANPage_ddlColumn2 CONTENT=%PrecinctName
+TAG POS=1 TYPE=INPUT:SUBMIT FORM=ID:aspnetForm ATTR=ID:ctl00_ContentPlaceHolderVANPage_RefreshFilterButton
+
+TAG POS=1 TYPE=INPUT:SUBMIT FORM=ID:aspnetForm ATTR=ID:ctl00_ContentPlaceHolderVANPage_ButtonAddNew
+
+SAVEAS TYPE=CPL FOLDER=* FILE=+_{{!NOW:yyyymmdd_hhnnss}}
+ONDOWNLOAD FOLDER=* FILE=+_{{!NOW:yyyymmdd_hhnnss}} WAIT=YES
+
+SAVEAS TYPE=CPL FOLDER=* FILE=+_{{!NOW:yyyymmdd_hhnnss}}
+'People'
+TAG POS=1 TYPE=SELECT FORM=ACTION:Demographics.aspx ATTR=ID:ctl00_ContentPlaceHolderVANPage_RunDemographicsBy CONTENT=%VHHID
+TAG POS=1 TYPE=INPUT:SUBMIT FORM=ID:aspnetForm ATTR=ID:ctl00_ContentPlaceHolderVANPage_RefreshFilterButton
+
+TAG POS=1 TYPE=INPUT:SUBMIT FORM=ID:aspnetForm ATTR=ID:ctl00_ContentPlaceHolderVANPage_ButtonAddNew
+
+SAVEAS TYPE=CPL FOLDER=* FILE=+_{{!NOW:yyyymmdd_hhnnss}}
+
+ONDOWNLOAD FOLDER=* FILE=+_{{!NOW:yyyymmdd_hhnnss}} WAIT=YES
+'Doors'
+TAG POS=1 TYPE=SELECT FORM=ACTION:Demographics.aspx ATTR=ID:ctl00_ContentPlaceHolderVANPage_RunDemographicsBy CONTENT=%PhoneHHID
+TAG POS=1 TYPE=INPUT:SUBMIT FORM=ID:aspnetForm ATTR=ID:ctl00_ContentPlaceHolderVANPage_RefreshFilterButton
+
+TAG POS=1 TYPE=INPUT:SUBMIT FORM=ID:aspnetForm ATTR=ID:ctl00_ContentPlaceHolderVANPage_ButtonAddNew
+ONDOWNLOAD FOLDER=* FILE=+_{{!NOW:yyyymmdd_hhnnss}} WAIT=YES
+
+TAG POS=1 TYPE=INPUT:SUBMIT FORM=ID:aspnetForm ATTR=ID:ctl00_ContentPlaceHolderVANPage_ButtonAddNew
+'Phones'
