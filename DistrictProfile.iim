@@ -1,0 +1,42 @@
+VERSION BUILD=8810214 RECORDER=FX
+
+set !errorignore yes
+set !extract_test_popup no
+
+SET !ERRORIGNORE YES
+SET !DATASOURCE C:\Users\Local<SP>User\Documents\iMacros\Macros\reporting-states-list.csv
+SET !DATASOURCE_COLUMNS 1
+SET !LOOP 5
+SET !DATASOURCE_LINE {{!LOOP}}
+
+set !replayspeed medium
+
+TAG POS=1 TYPE=A ATTR=TXT:My<SP>Voters
+TAG POS=1 TYPE=A ATTR=ID:header-van-context-switch-link
+FRAME NAME="VANRadWindowContextSwitch"
+TAG POS=1 TYPE=SELECT FORM=ID:aspnetForm ATTR=ID:ctl01_ContentPlaceHolderVANPage_SelectMultiStateID CONTENT=${{!COL1}}
+TAG POS=1 TYPE=INPUT:SUBMIT FORM=ID:aspnetForm ATTR=ID:ctl01_ContentPlaceHolderVANPage_ButtonContinue
+wait seconds=1
+TAG POS=1 TYPE=INPUT:SUBMIT FORM=ID:aspnetForm ATTR=ID:ctl01_ContentPlaceHolderVANPage_ButtonContinue
+
+
+EVENT TYPE=CLICK SELECTOR="#ctl00_ContentPlaceHolderVANPage_CountsAndCrosstabsAccordionPane_header_HyperLinkMenuCountsAndCrosstabs" BUTTON=0
+EVENT TYPE=CLICK SELECTOR="#ctl00_ContentPlaceHolderVANPage_CountsAndCrosstabsAccordionPane_content>TABLE>TBODY>TR>TD:nth-of-type(2)>A" BUTTON=0
+EVENT TYPE=CLICK SELECTOR="#ctl00_ContentPlaceHolderVANPage_ctl02_ctl04_rcbtv__g1_Input" BUTTON=0
+EVENT TYPE=CLICK SELECTOR="#ctl00_ContentPlaceHolderVANPage_ctl02_ctl04_rcbtv__g1_i0_rcbtv__g1_TreeView>UL>LI:nth-of-type(2)>DIV>SPAN:nth-of-type(2)" BUTTON=0
+EVENT TYPE=CLICK SELECTOR="#ctl00_ContentPlaceHolderVANPage_ctl02_ctl04_rcbtv__g1_i0_rcbtv__g1_TreeView>UL>LI:nth-of-type(2)>UL>LI:nth-of-type(2)>DIV>SPAN:nth-of-type(2)" BUTTON=0
+EVENT TYPE=CLICK SELECTOR="#ctl00_ContentPlaceHolderVANPage_ctl02_ctl05_rcbtv__g2_Input" BUTTON=0
+EVENT TYPE=CLICK SELECTOR="#ctl00_ContentPlaceHolderVANPage_ctl02_ctl05_rcbtv__g2_i0_rcbtv__g2_TreeView>UL>LI:nth-of-type(2)>DIV>SPAN:nth-of-type(2)" BUTTON=0
+EVENT TYPE=CLICK SELECTOR="#ctl00_ContentPlaceHolderVANPage_ctl02_ctl05_rcbtv__g2_i0_rcbtv__g2_TreeView>UL>LI:nth-of-type(2)>UL>LI:nth-of-type(11)>DIV>SPAN:nth-of-type(2)" BUTTON=0
+EVENT TYPE=CLICK SELECTOR="#ctl00_ContentPlaceHolderVANPage_ctl02_ctl06_rcbtv__g3_Input" BUTTON=0
+EVENT TYPE=CLICK SELECTOR="#ctl00_ContentPlaceHolderVANPage_ctl02_ctl06_rcbtv__g3_i0_rcbtv__g3_TreeView>UL>LI:nth-of-type(2)>DIV>SPAN:nth-of-type(2)" BUTTON=0
+EVENT TYPE=CLICK SELECTOR="#ctl00_ContentPlaceHolderVANPage_ctl02_ctl06_rcbtv__g3_i0_rcbtv__g3_TreeView>UL>LI:nth-of-type(2)>UL>LI>DIV>SPAN:nth-of-type(2)" BUTTON=0
+EVENT TYPE=CLICK SELECTOR="#ctl00_ContentPlaceHolderVANPage_ctl02_ctl07_rcbtv__g4_Input" BUTTON=0
+EVENT TYPE=CLICK SELECTOR="#ctl00_ContentPlaceHolderVANPage_ctl02_ctl07_rcbtv__g4_i0_rcbtv__g4_TreeView>UL>LI:nth-of-type(3)>DIV>SPAN:nth-of-type(2)" BUTTON=0
+EVENT TYPE=CLICK SELECTOR="#ctl00_ContentPlaceHolderVANPage_ctl02_ctl07_rcbtv__g4_i0_rcbtv__g4_TreeView>UL>LI:nth-of-type(3)>UL>LI>DIV>SPAN:nth-of-type(2)" BUTTON=0
+
+wait seconds=2
+EVENT TYPE=CLICK SELECTOR="#ctl00_ContentPlaceHolderVANPage_RefreshFilterButton" BUTTON=0
+EVENT TYPE=CLICK SELECTOR="#ctl00_ContentPlaceHolderVANPage_ButtonAddNew" BUTTON=0
+ONDOWNLOAD FOLDER=* FILE=+_{{!NOW:yyyymmdd_hhnnss}} WAIT=YES
+SAVEAS TYPE=CPL FOLDER=* FILE=+_{{!NOW:yyyymmdd_hhnnss}}
