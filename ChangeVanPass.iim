@@ -1,0 +1,29 @@
+VERSION BUILD=8810214 RECORDER=FX
+TAB T=1
+SET !EXTRACT_TEST_POPUP NO
+SET !DATASOURCE C:\Users\Local<SP>User\Downloads\Momsvantraining523.csv
+SET !DATASOURCE_COLUMNS 15
+SET !LOOP 11
+SET !DATASOURCE_LINE {{!LOOP}}
+TAG POS=1 TYPE=A ATTR=ID:context-logout-link
+TAG POS=1 TYPE=INPUT:TEXT FORM=ID:aspnetForm ATTR=ID:TextBoxUserName CONTENT={{!Col5}}
+SET !ENCRYPTION NO
+TAG POS=1 TYPE=INPUT:PASSWORD FORM=ID:aspnetForm ATTR=ID:TextBoxPassword CONTENT=immapass0
+WAIT seconds = 4
+TAG POS=1 TYPE=INPUT:SUBMIT FORM=ID:aspnetForm ATTR=ID:ctl00_ContentPlaceHolderVANPage_ButtonLogin
+SET !ENCRYPTION NO
+TAG POS=1 TYPE=INPUT:PASSWORD FORM=ID:aspnetForm ATTR=ID:ctl00_ContentPlaceHolderVANPage_VANDetailsItemOldPassword_VANInputItemDetailsItemTextBoxCurrentPassword_TextBoxCurrentPassword CONTENT=immapass0
+TAG POS=1 TYPE=INPUT:PASSWORD FORM=ID:aspnetForm ATTR=ID:ctl00_ContentPlaceHolderVANPage_VANDetailsItemNewPassword_VANInputItemDetailsItemTextBoxNewPassword_TextBoxNewPassword CONTENT=mothersdemand2014
+TAG POS=1 TYPE=INPUT:PASSWORD FORM=ID:aspnetForm ATTR=ID:ctl00_ContentPlaceHolderVANPage_VANDetailsItemConfirmNewPassword_VANInputItemDetailsItemTextBoxConfirmNewPassword_TextBoxConfirmNewPassword CONTENT=mothersdemand2014
+WAIT seconds = 4
+TAG POS=1 TYPE=INPUT:SUBMIT FORM=ID:aspnetForm ATTR=ID:ctl00_ContentPlaceHolderVANPage_ButtonPasswordSubmit
+TAG POS=1 TYPE=INPUT:TEXT FORM=ID:aspnetForm ATTR=ID:ctl00_ContentPlaceHolderVANPage_VANSectionHeadingAddress_VanDetailsItemAddress_VANInputItemDetailsItemAddress_AddressADDRESS1 CONTENT=8941<SP>Chapman<SP>Cir
+TAG POS=1 TYPE=INPUT:TEXT FORM=ID:aspnetForm ATTR=ID:ctl00_ContentPlaceHolderVANPage_VANSectionHeadingAddress_VanDetailsItemAddress_VANInputItemDetailsItemAddress_AddressCITY CONTENT=Strongsville
+TAG POS=1 TYPE=INPUT:TEXT FORM=ID:aspnetForm ATTR=ID:ctl00_ContentPlaceHolderVANPage_VANSectionHeadingAddress_VanDetailsItemAddress_VANInputItemDetailsItemAddress_AddressSTATE CONTENT=OH
+TAG POS=1 TYPE=INPUT:TEXT FORM=ID:aspnetForm ATTR=ID:ctl00_ContentPlaceHolderVANPage_VANSectionHeadingAddress_VanDetailsItemAddress_VANInputItemDetailsItemAddress_AddressZIP CONTENT=44136
+TAG POS=1 TYPE=INPUT:TEXT FORM=ID:aspnetForm ATTR=ID:ctl00_ContentPlaceHolderVANPage_VANSectionHeadingEmail_VANDetailsItemEmail_VANInputItemDetailsItemEmail_Email CONTENT=bushytaleof00_04@yahoo.com
+TAG POS=1 TYPE=INPUT:TEXT FORM=ID:aspnetForm ATTR=ID:ctl00_ContentPlaceHolderVANPage_VANSectionHeadingPhone_VANDetailsItemHomePhone_VANInputItemDetailsItemHomePhone_HomePhone1 CONTENT=440
+TAG POS=1 TYPE=INPUT:TEXT FORM=ID:aspnetForm ATTR=ID:ctl00_ContentPlaceHolderVANPage_VANSectionHeadingPhone_VANDetailsItemHomePhone_VANInputItemDetailsItemHomePhone_HomePhone2 CONTENT=572
+TAG POS=1 TYPE=INPUT:TEXT FORM=ID:aspnetForm ATTR=ID:ctl00_ContentPlaceHolderVANPage_VANSectionHeadingPhone_VANDetailsItemHomePhone_VANInputItemDetailsItemHomePhone_HomePhone3 CONTENT=0864
+WAIT seconds = 4
+TAG POS=1 TYPE=A ATTR=ID:ctl00_ContentPlaceHolderVANPage_VANSectionHeadingSave_LinkButtonSave
